@@ -5,7 +5,7 @@ class Header extends React.Component {
         return (
             <header>
                 <nav>
-                    <a href="/"><img src="img/logo.png" alt="ロゴ"/></a>
+                    <a href="/cidmap"><img src="img/logo.png" alt="ロゴ"/></a>
                 </nav>
             </header>
         );
