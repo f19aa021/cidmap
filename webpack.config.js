@@ -4,7 +4,7 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
     output: {
-      path: path.join(__dirname, 'dist', 'js'),
+      path: path.join(__dirname, 'docs', 'js'),
       filename: 'app.js'
     },
     devtool: 'inline-source-map',
@@ -12,7 +12,7 @@ module.exports = {
       inline: true,
       open: true,
       openPage: '',
-      contentBase: path.join(__dirname, "dist"),
+      contentBase: path.join(__dirname, "docs"),
       watchContentBase: true,
       port: 8080
     },

@@ -27,6 +27,7 @@ header nav {
   margin-left: 170px;
 }
 main {
+  min-height: calc(100vh - 75px - 30px);
   margin-top: 75px;
   padding: 20px 0;
 }
