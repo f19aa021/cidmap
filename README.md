@@ -2,4 +2,4 @@
 
 こちらからアクセスできます。
 
-![qr](./src/data/qr.png)
+![qr](./src/data/qr_cidmap.png)
