@@ -13,9 +13,9 @@ class App extends React.Component {
                 <Header />
                 <main>
                     <BrowserRouter>
-                        <Route exact path='/cidmap/' component={SchoolGuide}/>
-                        <Route exact path='/cidmap/floor:numFloor/' component={FloorGuide}/>
-                        <Route exact path='/cidmap/floor:numFloor/room:numRoom/' component={RoomGuide}/>
+                        <Route exact path='/' component={SchoolGuide}/>
+                        <Route exact path='/floor:numFloor/' component={FloorGuide}/>
+                        <Route exact path='/floor:numFloor/room:numRoom/' component={RoomGuide}/>
                     </BrowserRouter>
                 </main>
                 <Footer />
