@@ -27,7 +27,7 @@ header nav {
   margin-left: 170px;
 }
 main {
-  min-height: calc(100vh - 75px - 45px);
+  min-height: calc(100vh - 75px - 28px);
   margin-top: 75px;
   padding: 20px 0;
 }
@@ -35,7 +35,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45px;
+  height: 28px;
   width: 100%;
   border-radius: 7px 7px 0 0;
   color: #fff;
@@ -164,6 +164,12 @@ footer {
   }
   header nav {
     margin-left: 10px;
+  }
+  main {
+    min-height: calc(100vh - 75px - 45px);
+  }
+  footer {
+    height: 45px;
   }
   .shop {
     width: 100%;
