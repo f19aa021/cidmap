@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-class Shop extends React.Component {
+class Event extends React.Component {
     render() {
-        const { schoolName, schoolGrade, semiName, shopName, price, introductionText } = this.props.shopData;
+        const { shopName, introductionText } = this.props.shopData;
         let suffix = 'JPG';
+        if (shopName.includes('受付(食券販売)') || shopName.includes('休憩所')) {
+            suffix = 'png';
+        }
         return (
             <div class="shop">
-                <h2>{schoolName}{schoolGrade}{semiName} {shopName}</h2>
+                <h2>{shopName}</h2>
                 <div class="introduction-img">
                     <img src={`../img/shop-introduction-img/${shopName}.${suffix}`} alt={`${shopName}の紹介画像`} />
-                </div>
-                <div class="price">
-                    <p>¥{price}</p>
                 </div>
                 <div class="introduction-text">
                     <p>{introductionText}</p>
@@ -21,4 +21,4 @@ class Shop extends React.Component {
     }
 }
 
-export default Shop;
+export default Event;

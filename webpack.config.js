@@ -10,9 +10,9 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
       inline: true,
-      open: true,
+      open: false,
       openPage: '',
-      contentBase: path.join(__dirname, "docs"),
+      contentBase: path.join(__dirname, 'docs'),
       watchContentBase: true,
       port: 8080
     },

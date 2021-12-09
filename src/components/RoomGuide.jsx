@@ -1,29 +1,38 @@
 import React from 'react';
 import Shop from './molecules/Shop';
-import shopsData from '../data/shopsData';
+import Event from './molecules/Event';
 
 class RoomGuide extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numRoom: this.props.match.params.numRoom,
-            shopsData: shopsData
+            shopsData: this.props.location.state.shopsData,
+            roomName: this.props.location.state.roomName,
+            numRoom: this.props.match.params.numRoom
         }
     }
     render() {
+        const { shopsData, roomName, numRoom } = this.state;
         const shops = [];
-        this.state.shopsData[this.state.numRoom].forEach((shopData) => {
-            shops.push(
-                <Shop shopData={shopData} />
-            )
+        shopsData.forEach((shopData) => {
+            if (shopData.type === 'shop') {
+                shops.push(
+                    <Shop shopData={shopData} />
+                )
+            } else if (shopData.type === 'event') {
+                shops.push(
+                    <Event shopData={shopData} />
+                )
+            }
         });
         return (
             <div class="room-guide">
-                <h1>{this.state.numRoom}教室</h1>
+                <button id="back-button" onClick={() => this.props.history.goBack()}>＜ 戻る</button>
+                <h1>{roomName}</h1>
                 <div class="shops"> 
                     {shops}
                 </div>
-          </div>
+            </div>                
         );
     }
 }

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: futura;
+  font-family: futura, osaka;
   background-color: #eee;
 }
 .container {
@@ -30,6 +30,19 @@ main {
   min-height: calc(100vh - 75px - 28px);
   margin-top: 75px;
   padding: 20px 0;
+}
+#back-button {
+  font-family: inherit;
+  font-size: 21px;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #222;
+  padding: 10px 14px;
+}
+#back-button:hover {
+  transition: 0.3s ease;
+  background-color: #d03043;
 }
 footer {
   display: flex;
@@ -71,7 +84,7 @@ footer {
   border-radius: 7px;
 }
 .floor-7 {
-  background: #FF7373;
+  background: #ff7373;
 }
 .floor-6 {
   background: #ffb972;
@@ -99,12 +112,15 @@ footer {
 .floor-guide img {
   width: 100%;
 }
-.rooms {
+.floor-guide #back-button {
+  margin: 6px 0 0 6px;
+}
+.room-links {
   display: flex;
   justify-content: center;
   margin: 20px;
 }
-.room {
+.room-link {
   display: inline-flex;
   align-items: center;
   margin: 0 5px;
@@ -115,7 +131,7 @@ footer {
   font-size: 21px;
   text-decoration: none;
 }
-.room:hover {
+.room-link:hover {
   transition: 0.3s ease;
   background-color: #d03043;
 }
