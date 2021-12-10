@@ -4,7 +4,7 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <small>© 2021 kentaro yamamoto</small>
+                <small>© 2021 cidmap.com</small>
             </footer>
         );
     }
