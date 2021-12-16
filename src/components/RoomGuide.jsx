@@ -27,7 +27,7 @@ class RoomGuide extends React.Component {
         });
         return (
             <div class="room-guide">
-                <button id="back-button" onClick={() => this.props.history.goBack()}>＜ 戻る</button>
+                <button class="button back-button" onClick={() => this.props.history.goBack()}>＜ 戻る</button>
                 <h1>{roomName}</h1>
                 <div class="shops"> 
                     {shops}

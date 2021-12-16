@@ -31,18 +31,86 @@ main {
   margin-top: 75px;
   padding: 20px 0;
 }
-#back-button {
-  font-family: inherit;
-  font-size: 21px;
-  border: 0;
+.button {
   border-radius: 3px;
-  color: #fff;
   background-color: #222;
-  padding: 10px 14px;
+  color: #fff;
+  font-size: 21px;
+  padding: 10px;
+  text-decoration: none;
 }
-#back-button:hover {
-  transition: 0.3s ease;
+.button:hover {
+  transition: background-color 0.3s ease;
   background-color: #d03043;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.error h1 {
+  padding: 10px 0;
+}
+.error p {
+  padding: 5px 0;
+}
+.error .button {
+  display: inline-flex;
+  margin: 14px 0;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 75px - 28px - 40px - 18px);;
+  width: 100%;
+}
+.three_balls, .three_balls:before, .three_balls:after {
+  border-radius: 50%;
+  background-color: #888;
+  width: 18px;
+  height: 18px;
+  transform-origin: center center;
+  display: inline-block;
+}
+.three_balls {
+  position: relative;
+  background-color: rgba(#888, 1);
+  opacity: 1;
+  animation: scaleAlpha 1s infinite linear;
+}
+.three_balls:before, .three_balls:after {
+  content: '';
+  position: relative;
+  opacity: 0.25;
+}
+.three_balls:before {
+  left: 30px;
+  top: 0px;
+  animation: scaleAlphaBefore 1s infinite linear;
+}
+.three_balls:after {
+  left: -30px;
+  top: -23px;
+  animation: scaleAlphaAfter 1s infinite linear;
+}
+@keyframes scaleAlpha {
+  0% { opacity: 1; }
+  33% {  opacity: 0.25; }
+  66% { opacity: 0.25; }
+  100% {  opacity: 1; }
+}
+@keyframes scaleAlphaBefore {
+  0% { opacity: 0.25; }
+  33% { opacity: 1; }
+  66% { opacity: 0.25; }
+}
+@keyframes scaleAlphaAfter {
+  33% { opacity: 0.25; }
+  66% { opacity: 1; }
+  100% { opacity: 0.25; }
 }
 footer {
   display: flex;
@@ -105,14 +173,19 @@ footer {
   background: #7388ff;
 }
 
-/* floor* */
+/* /nf/ */
 .floor-guide {
   margin: 5px;
 }
 .floor-guide img {
   width: 100%;
 }
-.floor-guide #back-button {
+.back-button {
+  font-family: inherit;
+  border: 0;
+  padding: 10px 14px;
+}
+.floor-guide .back-button {
   margin: 6px 0 0 6px;
 }
 .room-links {
@@ -124,19 +197,9 @@ footer {
   display: inline-flex;
   align-items: center;
   margin: 0 5px;
-  padding: 10px;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #222;
-  font-size: 21px;
-  text-decoration: none;
-}
-.room-link:hover {
-  transition: 0.3s ease;
-  background-color: #d03043;
 }
 
-/* room*** */
+/* /nf/nnn/  */
 .room-guide {
   padding: 11px;
   border-radius: 6px;
@@ -171,7 +234,16 @@ footer {
   padding: 3px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 85px;
+  }
+  header nav {
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 599px) {
   .container {
     margin: 0;
     display: flex;

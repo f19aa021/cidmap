@@ -33,11 +33,18 @@ class FloorGuide extends React.Component {
         const { error, isLoaded, shopsData, numFloor } = this.state;
         if (error) {
             return (
-                <div>Error: {error.message}</div>
+                <div class="error">
+                    <h1>error!</h1>
+                    <p>{error.message}</p>
+                    <p>Sorry, please return to top</p>
+                    <Link to="/" class="button">トップページに戻る</Link>
+                </div>
             );
         } else if (!isLoaded) {
             return (
-                <div>Loading...</div>
+                <div class="loading">
+                    <div class="three_balls"></div>
+                </div>
             );
         } else {
             const roomLinks = [];
@@ -51,12 +58,12 @@ class FloorGuide extends React.Component {
                     roomName = numRoom + '教室';
                 }
                 roomLinks.push(
-                    <Link to={{pathname: `/${numFloor}/${numRoom}`, state: {shopsData: shopsData[numFloor][numRoom], roomName: roomName}}} class="room-link">{roomName}を見る　＞</Link>
+                    <Link to={{pathname: `/${numFloor}/${numRoom}`, state: {shopsData: shopsData[numFloor][numRoom], roomName: roomName}}} class="button room-link">{roomName}を見る　＞</Link>
                 );
             });
             return (
                 <div class="floor-guide">
-                    <button id="back-button" onClick={() => this.props.history.goBack()}>＜ 戻る</button>
+                    <button class="button back-button" onClick={() => this.props.history.goBack()}>＜ 戻る</button>
                     <div class="room-links">
                         {roomLinks}
                     </div>
