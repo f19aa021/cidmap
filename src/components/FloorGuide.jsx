@@ -37,7 +37,7 @@ class FloorGuide extends React.Component {
                     <h1>error!</h1>
                     <p>{error.message}</p>
                     <p>Sorry, please return to top</p>
-                    <Link to="/" class="button">トップページに戻る</Link>
+                    <Link to="/cidmap/" class="button">トップページに戻る</Link>
                 </div>
             );
         } else if (!isLoaded) {
@@ -58,7 +58,7 @@ class FloorGuide extends React.Component {
                     roomName = numRoom + '教室';
                 }
                 roomLinks.push(
-                    <Link to={{pathname: `/${numFloor}/${numRoom}`, state: {shopsData: shopsData[numFloor][numRoom], roomName: roomName}}} class="button room-link">{roomName}を見る　＞</Link>
+                    <Link to={{pathname: `/cidmap/${numFloor}/${numRoom}`, state: {shopsData: shopsData[numFloor][numRoom], roomName: roomName}}} class="button room-link">{roomName}を見る　＞</Link>
                 );
             });
             return (

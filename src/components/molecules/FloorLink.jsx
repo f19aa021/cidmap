@@ -6,7 +6,7 @@ class FloorLink extends React.Component {
         return (
             <div class={`floor-link floor-${this.props.numFloor}`}>
                 <div class="floor-name">{this.props.numFloor}F</div>
-                <Link to={`/${this.props.numFloor}f`}></Link>
+                <Link to={`/cidmap/${this.props.numFloor}f`}></Link>
             </div>
         );
     }
