@@ -2,4 +2,4 @@
 
 こちらからアクセスできます。
 
-![qr](./data/qr_cidmap.png)
+![qr](./data/qr_githubio.png)
